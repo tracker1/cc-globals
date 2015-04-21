@@ -4,7 +4,10 @@
   "description": "Setup global variables for ramda and fetch",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish-major": "npm run build && npm version major && npm publish && git push origin master && git push --tags",
+    "publish-minor": "npm run build && npm version minor && npm publish && git push origin master && git push --tags",
+    "publish-patch": "npm run build && npm version patch && npm publish && git push origin master && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,8 @@
   },
   "homepage": "https://github.com/tracker1/cc-globals",
   "dependencies": {
+    "bluebird": "^2.9.24",
+    "i-promise": "^1.1.0",
     "isomorphic-fetch": "^2.0.0",
     "ramda": "^0.11.0"
   }
