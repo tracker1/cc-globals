@@ -10,11 +10,11 @@ require('i-promise/config').use(bb);
 //patch globals and context
 if (typeof global !== 'undefined') {
   global.R = R;
-  global.Promie = bb;
+  global.Promise = bb;
   global.fetch = fetch;
 } 
 this.R = R;
-this.Promie = bb;
+this.Promise = bb;
 this.fetch = fetch;
 
 
