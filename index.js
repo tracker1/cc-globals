@@ -1,16 +1,22 @@
 var R = require('ramda'); 
-var fetch = require('isomorphic-fetch'); //self patching global
+var fetch = require('isomorphic-fetch');
 var bb = require('bluebird');
 
-//patch global Ramda
-if (typeof global !== 'undefined') global.R = R;
-this.R = R;
 
 //make i-promise use bluebird
 require('i-promise/config').use(bb);
 
-//make global Promise implementation bluebird
-this.Promise = bb;
+
+//patch globals and context
+if (typeof global !== 'undefined') {
+  global.R = R;
+  global.Promie = bb;
+  global.fetch = fetch;
+} 
+this.R = R;
+this.Promie = bb;
+this.fetch = fetch;
+
 
 //export the modules this uses
 module.exports = {
