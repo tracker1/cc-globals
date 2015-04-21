@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "exit 0",
     "publish-major": "npm run build && npm version major && npm publish && git push origin master && git push --tags",
     "publish-minor": "npm run build && npm version minor && npm publish && git push origin master && git push --tags",
     "publish-patch": "npm run build && npm version patch && npm publish && git push origin master && git push --tags"
